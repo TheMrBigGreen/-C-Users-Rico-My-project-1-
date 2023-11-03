@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     public Rigidbody[] balls;
 
+
     private float horizontalInput;
     private Vector3 ballOffSet;
     private bool wasBallThrown;
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void StartThrow()
+    public void StartThrow()
     {
         throwingArrowAnim.SetBool("Aiming", true);
         wasBallThrown = false;
@@ -68,7 +69,7 @@ public class PlayerController : MonoBehaviour
         throwingArrow.position.z
         );
         //Set Ball Position based on Throwing Directon Position
-        selectedBall.position = throwingArrow.position + ballOffSet;
+        selectedBall.transform.position = throwingArrow.position + ballOffSet;
       } 
     }
 
